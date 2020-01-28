@@ -1,0 +1,32 @@
+main: me.snowman.betterssentials.Betterssentials
+name: Betterssentials
+author: SnowmanFTW
+version: 2.0.0 DEV 20200128
+api-version: 1.13
+
+commands:
+  afk:
+    description: Afk Command
+    usage: /afk [player]
+    permission: betterssentials.afk
+    permission-message: "§cYou don't have permission §6betterssentials.afk §cto use this command."
+  back:
+    description: Back command
+    usage: /back
+    permission: betterssentials.back
+    permission-message: "§cYou don't have permission §6betterssentials.back §cto use this command."
+  balance:
+    description: Balance command
+    usage: /balance [player]
+    permission: betterssentials.balance
+    permission-message: "§cYou don't have permission §6betterssentials.balance §cto use this command."
+  ban:
+    description: Ban command
+    usage: /ban <player> [reason]
+    permission: betterssentials.ban
+    permission-message: "§cYou don't have permission §6betterssentials.ban §cto use this command."
+  unban:
+    description: Unban command
+    usage: /unban <player>
+    permission: betterssentials.unban
+    permission-message: "§cYou don't have permission §6betterssentials.unban §cto use this command."

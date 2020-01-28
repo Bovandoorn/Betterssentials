@@ -1,0 +1,60 @@
+#This is the lines that will be cleared when the clearchat command will be executed
+Clear-Chat-Lines: 75
+#Put here all the commands you want to be disabled.
+Blocked-commands:
+  - op
+  - version
+  - heal
+  - ver
+#This are the commands that are blocked during the time a player is jailed
+Jail-Blocked-Commands:
+  - spawn
+  - warp
+  - home
+  - tp
+#The number of seconds between an auto message. If you want to disable this put it to 0
+Auto-Message-Time: 0
+#The auto messages that will be displayed
+Auto-Messages:
+  - "&6Hope you enjoy this server!"
+  - "&cThis is an auto message"
+  - "&6If you enjoy the plugin you can find it here:\n&chttps://www.spigotmc.org/resources/betterssentials-1-8-1-13.58074/"
+#These are the join and leave messages. Set to "none" to disable
+Join-Message: "&4%player% &6entered the server."
+Leave-Message: "&4%player% &6left the server."
+#This enables/disables the chat formatting
+Chat-Format-Enable: true
+#This changes the format to what you want
+Chat-Format:
+  Default: "%prefix% %player%&7: %message%"
+  admin: "%prefix% %player%&7: &r%message%"
+#What colour should opped players have? (Use numbers from 0-9 and letters from a-f)
+Op-Color: "r"
+#Should kits require their permissions? Example: betterssential.kit.diamonds (diamonds being the kit name)
+#What sign should be used for balance?
+Money-Sign: "$"
+Per-Kit-Permissions: false
+#What message should be displayed on first join? Set to none to disable
+First-Join-Message: "&4%player% &6joined for the first time!"
+#What commands should be entered on first join?
+First-Join-Commands:
+  - "say &6Everyone welcome them!"
+#What commands should have a cooldown between uses?
+Cooldown-Commands:
+  - kick
+  - ban
+#How much time should the cooldown have?
+Cooldown-Time: 5
+#How much time should the cooldown be to a teleport command?
+Cooldown-Move-Time: 3
+#What language should the plugin be in? Languages supported: en,ro,es,pl,fr,de,ru,zh,sv
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#!(!This deletes old messages file so backup first!)!
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Locale: en
+#Set this to whatever the time in minutes should be after the player will go AFK
+Minutes-Until-Afk: 5
+#This will be the balance of the player on first join
+First-Balance: 0
+#This enables permission (betterssentials.warp.warp_name) per warp
+Per-Warp-Permission: false
