@@ -1,32 +1,57 @@
 main: me.snowman.betterssentials.Betterssentials
 name: Betterssentials
 author: SnowmanFTW
-version: 2.0.0 DEV 20200128
+version: 2.0.0 DEV 20200129
 api-version: 1.13
 
 commands:
   afk:
     description: Afk Command
-    usage: /afk [player]
+    usage: /<command> [player]
     permission: betterssentials.afk
     permission-message: "§cYou don't have permission §6betterssentials.afk §cto use this command."
   back:
     description: Back command
-    usage: /back
+    usage: /<command>
     permission: betterssentials.back
     permission-message: "§cYou don't have permission §6betterssentials.back §cto use this command."
   balance:
     description: Balance command
-    usage: /balance [player]
+    usage: /<command> [player]
+    aliases: [bal]
     permission: betterssentials.balance
     permission-message: "§cYou don't have permission §6betterssentials.balance §cto use this command."
   ban:
     description: Ban command
-    usage: /ban <player> [reason]
+    usage: /<command> <player> [reason]
     permission: betterssentials.ban
     permission-message: "§cYou don't have permission §6betterssentials.ban §cto use this command."
+  broadcast:
+    description: Broadcast command
+    usage: /<command> <message>
+    aliases: [bc]
+    permission: betterssentials.broadcast
+    permission-message: "§cYou don't have permission §6betterssentials.broadcast §cto use this command."
+  betterssentials:
+    description: Betterssentials command
+    usage: /<command> <reload>
+    aliases: [bess, ess, essentials, be]
+    permission: betterssentials.betterssentials
+    permission-message: "§cYou don't have permission §6betterssentials.betterssentials §cto use this command."
+  clearchat:
+    description: ClearChat command
+    usage: /<command>
+    aliases: [cc]
+    permission: betterssentials.clearchat
+    permission-message: "§cYou don't have permission §6betterssentials.clearchat §cto use this command."
+  clearinventory:
+    description: ClearInventory command
+    usage: /<command> [player]
+    aliases: [ci]
+    permission: betterssentials.clearinventory
+    permission-message: "§cYou don't have permission §6betterssentials.clearinventory §cto use this command."
   unban:
     description: Unban command
-    usage: /unban <player>
+    usage: /<command> <player>
     permission: betterssentials.unban
     permission-message: "§cYou don't have permission §6betterssentials.unban §cto use this command."

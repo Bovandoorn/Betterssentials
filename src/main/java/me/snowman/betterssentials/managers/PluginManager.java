@@ -19,6 +19,10 @@ public class PluginManager {
         getPlugin().getCommand("back").setExecutor(new Back());
         getPlugin().getCommand("balance").setExecutor(new Balance());
         getPlugin().getCommand("ban").setExecutor(new Ban());
+        getPlugin().getCommand("broadcast").setExecutor(new Broadcast());
+        getPlugin().getCommand("betterssentials").setExecutor(new BetterssentialsCommand());
+        getPlugin().getCommand("clearchat").setExecutor(new ClearChat());
+        getPlugin().getCommand("clearinventory").setExecutor(new ClearInventory());
         getPlugin().getCommand("unban").setExecutor(new Unban());
     }
 

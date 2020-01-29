@@ -15,27 +15,28 @@ public class Balance implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        final String prefix = messageManager.getPrefix();
         if (args.length == 0) {
             if (!(sender instanceof Player)) {
-                sender.sendMessage(messageManager.getPrefix() + messageManager.color("&cUsage: /balance <player>"));
+                sender.sendMessage(prefix + messageManager.color("&cUsage: /" + label + " <player>"));
                 return true;
             }
             Player player = (Player) sender;
-            player.sendMessage(messageManager.getPrefix() +
+            player.sendMessage(prefix +
                     messageManager.vaultPlaceholder(messageManager.playerPlaceholder(messageManager.getMessage("BalancePlayer"), player)));
             return true;
         }
         if (args.length == 1) {
             Player player = Bukkit.getPlayer(args[0]);
             if (player == null) {
-                sender.sendMessage(messageManager.getPrefix() + messageManager.getMessage("PlayerNotOnline"));
+                sender.sendMessage(prefix + messageManager.getMessage("PlayerNotOnline"));
                 return true;
             }
-            sender.sendMessage(messageManager.getPrefix() +
+            sender.sendMessage(prefix +
                     messageManager.vaultPlaceholder(messageManager.playerPlaceholder(messageManager.getMessage("BalancePlayer"), player)));
             return true;
         }
-        sender.sendMessage(messageManager.getPrefix() + messageManager.color("&cUsage: /balance [player]"));
+        sender.sendMessage(prefix + messageManager.color("&cUsage: /" + label + " [player]"));
         return true;
     }
 }

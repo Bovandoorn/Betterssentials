@@ -17,21 +17,22 @@ public class Unban implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        final String prefix = messageManager.getPrefix();
         if (args.length == 1) {
             OfflinePlayer player = Bukkit.getOfflinePlayer(args[0]);
             UUID uuid = player.getUniqueId();
             if (fileManager.getPlayer(uuid).getBoolean("values.banned")) {
                 fileManager.getPlayer(uuid).set("values.banned", false);
                 fileManager.savePlayer();
-                sender.sendMessage(messageManager.getPrefix() + messageManager.getMessage("Unbanned").replace("%target%", player.getName()).replace("%player%", sender.getName()));
+                sender.sendMessage(prefix + messageManager.getMessage("Unbanned").replace("%target%", player.getName()).replace("%player%", sender.getName()));
             } else {
-                sender.sendMessage(messageManager.getPrefix() + messageManager.playerPlaceholder(messageManager.getMessage("NotBanned"), player));
+                sender.sendMessage(prefix + messageManager.playerPlaceholder(messageManager.getMessage("NotBanned"), player));
                 return true;
             }
             return true;
         }
 
-        sender.sendMessage(messageManager.getPrefix() + messageManager.color("&cUsage: /unban <player>"));
+        sender.sendMessage(prefix + messageManager.color("&cUsage: /" + label + " <player>"));
         return true;
     }
 }

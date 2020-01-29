@@ -18,14 +18,15 @@ public class Ban implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        final String prefix = messageManager.getPrefix();
         if (args.length == 0) {
-            sender.sendMessage(messageManager.getPrefix() + messageManager.color("&cUsage: /ban <player> [reason]"));
+            sender.sendMessage(prefix + messageManager.color("&cUsage: /" + label + " <player> [reason]"));
             return true;
         }
         if (args.length == 1) {
             Player player = Bukkit.getPlayer(args[0]);
             if (player == null) {
-                sender.sendMessage(messageManager.getPrefix() + messageManager.getMessage("PlayerNotOnline"));
+                sender.sendMessage(prefix + messageManager.getMessage("PlayerNotOnline"));
                 return true;
             }
             UUID uuid = player.getUniqueId();
@@ -37,7 +38,7 @@ public class Ban implements CommandExecutor {
         } else {
             Player player = Bukkit.getPlayer(args[0]);
             if (player == null) {
-                sender.sendMessage(messageManager.getPrefix() + messageManager.getMessage("PlayerNotOnline"));
+                sender.sendMessage(prefix + messageManager.getMessage("PlayerNotOnline"));
                 return true;
             }
             UUID uuid = player.getUniqueId();

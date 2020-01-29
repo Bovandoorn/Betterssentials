@@ -29,7 +29,6 @@ public class MessageManager {
 
     public String playerPlaceholder(String string, Player player) {
         string = string.replace("%player%", player.getName());
-        System.out.println(economyImplementer);
         string = string.replace("%money%", String.valueOf(economyImplementer.getBalance(player.getName())));
         return string;
     }
