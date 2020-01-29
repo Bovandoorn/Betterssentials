@@ -6,10 +6,17 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
 
+import java.io.File;
+import java.util.*;
+import java.util.stream.Collectors;
+
 public class EconomyManager {
     public static Economy econ = null;
     private final EconomyImplementer economyImplementer = Betterssentials.economyImplementer;
     private final FileManager fileManager = Betterssentials.fileManager;
+    private final PluginManager pluginManager = Betterssentials.pluginManager;
+
+    public Map<UUID, Double> balances = new HashMap<>();
 
     public boolean setupEconomy() {
         if (Bukkit.getServer().getPluginManager().getPlugin("Vault") == null) {
@@ -30,6 +37,23 @@ public class EconomyManager {
                 economyImplementer.depositPlayer(players, fileManager.getPlayer(players.getUniqueId()).getDouble("values.balance") - economyImplementer.getBalance(players));
             }
         }
+
+    }
+
+    public HashMap sortedBalances() {
+        File folderPlayerData = new File(pluginManager.getPlugin().getDataFolder(), "data" + File.separator + "player data" + File.separator);
+
+        for (File file : folderPlayerData.listFiles()) {
+            UUID uuid = UUID.fromString(file.getName().replace(".yml", ""));
+            balances.put(uuid, fileManager.getPlayer(uuid).getDouble("values.balance"));
+        }
+        for (UUID uuid : economyImplementer.playerBank.keySet()) {
+            balances.put(uuid, economyImplementer.playerBank.get(uuid));
+        }
+        return balances.entrySet()
+                .stream()
+                .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (oldValue, newValue) -> oldValue, LinkedHashMap::new));
     }
 
 }

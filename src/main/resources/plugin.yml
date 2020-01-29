@@ -21,6 +21,12 @@ commands:
     aliases: [bal]
     permission: betterssentials.balance
     permission-message: "§cYou don't have permission §6betterssentials.balance §cto use this command."
+  baltop:
+    description: Baltop command
+    usage: /<command> [page]
+    aliases: [balancetop]
+    permission: betterssentials.baltop
+    permission-message: "§cYou don't have permission §6betterssentials.baltop §cto use this command."
   ban:
     description: Ban command
     usage: /<command> <player> [reason]

@@ -18,6 +18,7 @@ public class PluginManager {
         getPlugin().getCommand("afk").setExecutor(new Afk());
         getPlugin().getCommand("back").setExecutor(new Back());
         getPlugin().getCommand("balance").setExecutor(new Balance());
+        getPlugin().getCommand("baltop").setExecutor(new Baltop());
         getPlugin().getCommand("ban").setExecutor(new Ban());
         getPlugin().getCommand("broadcast").setExecutor(new Broadcast());
         getPlugin().getCommand("betterssentials").setExecutor(new BetterssentialsCommand());
