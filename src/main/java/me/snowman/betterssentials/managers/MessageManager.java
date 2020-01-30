@@ -27,6 +27,14 @@ public class MessageManager {
         return list.stream().map(this::color).collect(Collectors.toList());
     }
 
+    public Integer parseInt(String string) {
+        try {
+            return Integer.parseInt(string);
+        } catch (NumberFormatException e) {
+            return null;
+        }
+    }
+
     public String playerPlaceholder(String string, Player player) {
         string = string.replace("%player%", player.getName());
         string = string.replace("%money%", String.valueOf(economyImplementer.getBalance(player.getName())));

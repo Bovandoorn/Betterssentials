@@ -41,6 +41,7 @@ public class EconomyManager {
     }
 
     public HashMap sortedBalances() {
+        balances.clear();
         File folderPlayerData = new File(pluginManager.getPlugin().getDataFolder(), "data" + File.separator + "player data" + File.separator);
 
         for (File file : folderPlayerData.listFiles()) {
@@ -48,8 +49,10 @@ public class EconomyManager {
             balances.put(uuid, fileManager.getPlayer(uuid).getDouble("values.balance"));
         }
         for (UUID uuid : economyImplementer.playerBank.keySet()) {
-            balances.put(uuid, economyImplementer.playerBank.get(uuid));
+            balances.remove(uuid);
+            balances.put(uuid, economyImplementer.getBalance(Bukkit.getOfflinePlayer(uuid).getName()));
         }
+
         return balances.entrySet()
                 .stream()
                 .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))

@@ -24,6 +24,7 @@ public class PluginManager {
         getPlugin().getCommand("betterssentials").setExecutor(new BetterssentialsCommand());
         getPlugin().getCommand("clearchat").setExecutor(new ClearChat());
         getPlugin().getCommand("clearinventory").setExecutor(new ClearInventory());
+        getPlugin().getCommand("economy").setExecutor(new Economy());
         getPlugin().getCommand("unban").setExecutor(new Unban());
     }
 

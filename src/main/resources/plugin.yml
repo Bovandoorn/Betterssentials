@@ -1,7 +1,7 @@
 main: me.snowman.betterssentials.Betterssentials
 name: Betterssentials
 author: SnowmanFTW
-version: 2.0.0 DEV 20200129
+version: ${project.version}
 api-version: 1.13
 
 commands:
@@ -56,6 +56,11 @@ commands:
     aliases: [ci]
     permission: betterssentials.clearinventory
     permission-message: "§cYou don't have permission §6betterssentials.clearinventory §cto use this command."
+  economy:
+    description: Economy command
+    usage: /<command> <give/take/set/reset> <player> <amount>
+    permission: betterssentials.economy
+    permission-message: "§cYou don't have permission §6betterssentials.economy §cto use this command."
   unban:
     description: Unban command
     usage: /<command> <player>

@@ -111,7 +111,7 @@ public class EconomyImplementer implements Economy {
     @Override
     public boolean has(OfflinePlayer offlinePlayer, double v) {
         UUID uuid = offlinePlayer.getUniqueId();
-        double balance = playerBank.get(uuid);
+        double balance = fileManager.getPlayer(uuid).getDouble("values.balance");
         return balance >= v;
     }
 
@@ -126,7 +126,7 @@ public class EconomyImplementer implements Economy {
     @Override
     public boolean has(OfflinePlayer offlinePlayer, String s, double v) {
         UUID uuid = offlinePlayer.getUniqueId();
-        double balance = playerBank.get(uuid);
+        double balance = fileManager.getPlayer(uuid).getDouble("values.balance");
         return balance >= v;
     }
 
@@ -138,6 +138,8 @@ public class EconomyImplementer implements Economy {
         EconomyResponse response;
         if (has(player, v)) {
             playerBank.put(uuid, oldBalance - v);
+            fileManager.getPlayer(uuid).set("values.balance", oldBalance - v);
+            fileManager.savePlayer();
             response = new EconomyResponse(v, playerBank.get(uuid), EconomyResponse.ResponseType.SUCCESS, "Succes");
             response.transactionSuccess();
         } else {
@@ -154,6 +156,8 @@ public class EconomyImplementer implements Economy {
         EconomyResponse response;
         if (has(offlinePlayer, v)) {
             playerBank.put(uuid, oldBalance - v);
+            fileManager.getPlayer(uuid).set("values.balance", oldBalance - v);
+            fileManager.savePlayer();
             response = new EconomyResponse(v, playerBank.get(uuid), EconomyResponse.ResponseType.SUCCESS, "Succes");
             response.transactionSuccess();
         } else {
@@ -170,6 +174,8 @@ public class EconomyImplementer implements Economy {
         EconomyResponse response;
         if (has(player, v)) {
             playerBank.put(uuid, oldBalance - v);
+            fileManager.getPlayer(uuid).set("values.balance", oldBalance - v);
+            fileManager.savePlayer();
             response = new EconomyResponse(v, playerBank.get(uuid), EconomyResponse.ResponseType.SUCCESS, "Succes");
             response.transactionSuccess();
         } else {
@@ -185,6 +191,8 @@ public class EconomyImplementer implements Economy {
         EconomyResponse response;
         if (has(offlinePlayer, v)) {
             playerBank.put(uuid, oldBalance - v);
+            fileManager.getPlayer(uuid).set("values.balance", oldBalance - v);
+            fileManager.savePlayer();
             response = new EconomyResponse(v, playerBank.get(uuid), EconomyResponse.ResponseType.SUCCESS, "Succes");
             response.transactionSuccess();
         } else {
@@ -202,6 +210,8 @@ public class EconomyImplementer implements Economy {
         }
         double oldBalance = playerBank.get(uuid);
         playerBank.put(uuid, oldBalance + v);
+        fileManager.getPlayer(uuid).set("values.balance", oldBalance + v);
+        fileManager.savePlayer();
         EconomyResponse response = new EconomyResponse(v, playerBank.get(uuid), EconomyResponse.ResponseType.SUCCESS, "Succes");
         response.transactionSuccess();
         return response;
@@ -215,6 +225,8 @@ public class EconomyImplementer implements Economy {
         }
         double oldBalance = playerBank.get(uuid);
         playerBank.put(uuid, oldBalance + v);
+        fileManager.getPlayer(uuid).set("values.balance", oldBalance + v);
+        fileManager.savePlayer();
         EconomyResponse response = new EconomyResponse(v, playerBank.get(uuid), EconomyResponse.ResponseType.SUCCESS, "Succes");
         response.transactionSuccess();
         return response;
@@ -229,6 +241,8 @@ public class EconomyImplementer implements Economy {
         }
         double oldBalance = playerBank.get(uuid);
         playerBank.put(uuid, oldBalance + v);
+        fileManager.getPlayer(uuid).set("values.balance", oldBalance + v);
+        fileManager.savePlayer();
         EconomyResponse response = new EconomyResponse(v, playerBank.get(uuid), EconomyResponse.ResponseType.SUCCESS, "Succes");
         response.transactionSuccess();
         return response;
@@ -242,6 +256,8 @@ public class EconomyImplementer implements Economy {
         }
         double oldBalance = playerBank.get(uuid);
         playerBank.put(uuid, oldBalance + v);
+        fileManager.getPlayer(uuid).set("values.balance", oldBalance + v);
+        fileManager.savePlayer();
         EconomyResponse response = new EconomyResponse(v, playerBank.get(uuid), EconomyResponse.ResponseType.SUCCESS, "Succes");
         response.transactionSuccess();
         return response;
