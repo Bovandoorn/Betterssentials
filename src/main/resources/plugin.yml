@@ -61,6 +61,12 @@ commands:
     usage: /<command> <give/take/set/reset> <player> <amount>
     permission: betterssentials.economy
     permission-message: "§cYou don't have permission §6betterssentials.economy §cto use this command."
+  enderchest:
+    description: Ender Chest command
+    usage: /<command> [player]
+    aliases: [ec]
+    permission: betterssentials.enderchest
+    permission-message: "§cYou don't have permission §6betterssentials.enderchest §cto use this command."
   unban:
     description: Unban command
     usage: /<command> <player>

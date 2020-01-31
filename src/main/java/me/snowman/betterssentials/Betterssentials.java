@@ -11,6 +11,7 @@ public class Betterssentials extends JavaPlugin {
     public static EconomyImplementer economyImplementer;
     public static EconomyManager economyManager;
     private static VaultHook vaultHook;
+    public static EnderChestManager enderChestManager;
 
     public void onEnable() {
         loadManagers();
@@ -35,6 +36,7 @@ public class Betterssentials extends JavaPlugin {
         economyManager = new EconomyManager();
         messageManager = new MessageManager();
         afkManager = new AfkManager();
+        enderChestManager = new EnderChestManager();
     }
 
 

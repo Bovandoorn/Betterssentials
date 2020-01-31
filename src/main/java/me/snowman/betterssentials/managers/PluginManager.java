@@ -2,10 +2,7 @@ package me.snowman.betterssentials.managers;
 
 import me.snowman.betterssentials.Betterssentials;
 import me.snowman.betterssentials.commands.*;
-import me.snowman.betterssentials.events.AfkEvent;
-import me.snowman.betterssentials.events.BalanceEvent;
-import me.snowman.betterssentials.events.BanEvent;
-import me.snowman.betterssentials.events.FirstJoinEvent;
+import me.snowman.betterssentials.events.*;
 import org.bukkit.entity.Player;
 
 public class PluginManager {
@@ -25,6 +22,7 @@ public class PluginManager {
         getPlugin().getCommand("clearchat").setExecutor(new ClearChat());
         getPlugin().getCommand("clearinventory").setExecutor(new ClearInventory());
         getPlugin().getCommand("economy").setExecutor(new Economy());
+        getPlugin().getCommand("enderchest").setExecutor(new EnderChest());
         getPlugin().getCommand("unban").setExecutor(new Unban());
     }
 
@@ -33,6 +31,7 @@ public class PluginManager {
         getPlugin().getServer().getPluginManager().registerEvents(new BalanceEvent(), getPlugin());
         getPlugin().getServer().getPluginManager().registerEvents(new FirstJoinEvent(), getPlugin());
         getPlugin().getServer().getPluginManager().registerEvents(new BanEvent(), getPlugin());
+        getPlugin().getServer().getPluginManager().registerEvents(new EnderChestEvent(), getPlugin());
     }
 
     public boolean checkPerm(Player player, String perm) {
