@@ -13,7 +13,7 @@ Jail-Blocked-Commands:
   - home
   - tp
 #The number of seconds between an auto message. If you want to disable this put it to 0
-Auto-Message-Time: 0
+Auto-Message-Time: 60
 #The auto messages that will be displayed
 Auto-Messages:
   - "&6Hope you enjoy this server!"

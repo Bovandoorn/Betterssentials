@@ -38,6 +38,10 @@ public class MessageManager {
     public String playerPlaceholder(String string, Player player) {
         string = string.replace("%player%", player.getName());
         string = string.replace("%money%", String.valueOf(economyImplementer.getBalance(player.getName())));
+        string = string.replace("%xp%", String.valueOf(player.getTotalExperience()));
+        string = string.replace("%level%", String.valueOf(player.getLevel()));
+        string = string.replace("%morexp%", String.valueOf(player.getExpToLevel()));
+        string = string.replace("%gamemode%", player.getGameMode().name().toLowerCase());
         return string;
     }
 

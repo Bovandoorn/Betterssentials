@@ -23,6 +23,11 @@ public class PluginManager {
         getPlugin().getCommand("clearinventory").setExecutor(new ClearInventory());
         getPlugin().getCommand("economy").setExecutor(new Economy());
         getPlugin().getCommand("enderchest").setExecutor(new EnderChest());
+        getPlugin().getCommand("experience").setExecutor(new Experience());
+        getPlugin().getCommand("feed").setExecutor(new Feed());
+        getPlugin().getCommand("fly").setExecutor(new Fly());
+        getPlugin().getCommand("gamemode").setExecutor(new Gamemode());
+        getPlugin().getCommand("give").setExecutor(new Give());
         getPlugin().getCommand("unban").setExecutor(new Unban());
     }
 

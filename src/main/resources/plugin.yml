@@ -67,6 +67,33 @@ commands:
     aliases: [ec]
     permission: betterssentials.enderchest
     permission-message: "§cYou don't have permission §6betterssentials.enderchest §cto use this command."
+  experience:
+    description: Experience command
+    usage: /<command> <player> [show/set/give] [amount|L<level>]
+    aliases: [xp, exp]
+    permission: betterssentials.experience
+    permission-message: "§cYou don't have permission §6betterssentials.experience §cto use this command."
+  feed:
+    description: Feed command
+    usage: /<command> [player]
+    permission: betterssentials.feed
+    permission-message: "§cYou don't have permission §6betterssentials.feed §cto use this command."
+  fly:
+    description: Fly command
+    usage: /<command> [player]
+    permission: betterssentials.fly
+    permission-message: "§cYou don't have permission §6betterssentials.fly §cto use this command."
+  gamemode:
+    description: Gamemode command
+    usage: /<command> <survival/creative/adventure/spectator> <player>
+    aliases: [gm]
+    permission: betterssentials.gamemode
+    permission-message: "§cYou don't have permission §6betterssentials.gamemode §cto use this command."
+  give:
+    description: Give command
+    usage: /<command> <item> <player>
+    permission: betterssentials.give
+    permission-message: "§cYou don't have permission §6betterssentials.give §cto use this command."
   unban:
     description: Unban command
     usage: /<command> <player>

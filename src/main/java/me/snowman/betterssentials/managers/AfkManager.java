@@ -11,6 +11,7 @@ import java.util.UUID;
 
 public class AfkManager {
     private final MessageManager messageManager = Betterssentials.messageManager;
+    private final FileManager fileManager = Betterssentials.fileManager;
     private ArrayList<UUID> afkList = new ArrayList<>();
     private HashMap<UUID, Integer> afkTimer = new HashMap<>();
 
@@ -42,7 +43,7 @@ public class AfkManager {
                     return;
                 }
                 afkTimer.put(p.getUniqueId(), afkTimer.get(p.getUniqueId()) + 1);
-                if (afkTimer.get(p.getUniqueId()) == 60) {
+                if (afkTimer.get(p.getUniqueId()) == fileManager.getConfig().getInt("Minutes-Until-Afk") * 60) {
                     afkList.add(p.getUniqueId());
                     sendAfk(p);
                 }
