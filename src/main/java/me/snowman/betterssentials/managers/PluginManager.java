@@ -28,6 +28,10 @@ public class PluginManager {
         getPlugin().getCommand("fly").setExecutor(new Fly());
         getPlugin().getCommand("gamemode").setExecutor(new Gamemode());
         getPlugin().getCommand("give").setExecutor(new Give());
+        getPlugin().getCommand("god").setExecutor(new God());
+        getPlugin().getCommand("hat").setExecutor(new Hat());
+        getPlugin().getCommand("heal").setExecutor(new Heal());
+        getPlugin().getCommand("help").setExecutor(new Help());
         getPlugin().getCommand("unban").setExecutor(new Unban());
     }
 

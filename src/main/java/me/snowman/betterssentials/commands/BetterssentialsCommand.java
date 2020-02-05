@@ -22,6 +22,7 @@ public class BetterssentialsCommand implements CommandExecutor {
             fileManager.reloadConfig();
             fileManager.reloadMessages();
             sender.sendMessage(prefix + messageManager.getMessage("ConfigReload"));
+            return true;
         }
         sender.sendMessage(prefix + messageManager.color("&cUsage: /" + label + " <reload>"));
         return true;

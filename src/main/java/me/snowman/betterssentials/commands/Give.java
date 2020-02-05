@@ -22,6 +22,7 @@ public class Give implements CommandExecutor {
         }
         Player player = Bukkit.getPlayer(args[0]);
         Material material = Material.matchMaterial(args[1].toUpperCase());
+        int amount;
         if (player == null) {
             sender.sendMessage(prefix + messageManager.getMessage("PlayerNotOnline"));
             return true;
@@ -30,13 +31,18 @@ public class Give implements CommandExecutor {
             sender.sendMessage(prefix + messageManager.getMessage("ItemNotValid").replace("%item%", args[1]));
             return true;
         }
-        if (messageManager.parseInt(args[2]) == null) {
-            sender.sendMessage(prefix + messageManager.getMessage("NumberNotValid"));
-            return true;
+        if (args.length < 3) {
+            amount = 1;
+        } else {
+            if (messageManager.parseInt(args[2]) == null) {
+                sender.sendMessage(prefix + messageManager.getMessage("NumberNotValid"));
+                return true;
+            }
+            amount = messageManager.parseInt(args[2]);
         }
-        ItemStack item = new ItemStack(material, messageManager.parseInt(args[2]));
+        ItemStack item = new ItemStack(material, amount);
         player.getInventory().addItem(item);
-        sender.sendMessage(prefix + messageManager.playerPlaceholder(messageManager.getMessage("GiveOthers"), player).replace("%item%", args[1]).replace("%amount%", args[2]));
+        sender.sendMessage(prefix + messageManager.playerPlaceholder(messageManager.getMessage("GiveOthers"), player).replace("%item%", args[1]).replace("%amount%", String.valueOf(amount)));
         return true;
     }
 }

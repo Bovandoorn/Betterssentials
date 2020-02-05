@@ -94,6 +94,25 @@ commands:
     usage: /<command> <item> <player>
     permission: betterssentials.give
     permission-message: "§cYou don't have permission §6betterssentials.give §cto use this command."
+  god:
+    description: God command
+    usage: /<command> [player]
+    aliases: [godmode]
+    permission: betterssentials.god
+    permission-message: "§cYou don't have permission §6betterssentials.god §cto use this command."
+  hat:
+    description: Hat command
+    usage: /<command>
+    permission: betterssentials.hat
+    permission-message: "§cYou don't have permission §6betterssentials.god §cto use this command."
+  heal:
+    description: Heal command
+    usage: /<command> [player]
+    permission: betterssentials.heal
+    permission-message: "§cYou don't have permission §6betterssentials.heal §cto use this command."
+  help:
+    description: Help command
+    usage: /<command> [plugin/page]
   unban:
     description: Unban command
     usage: /<command> <player>

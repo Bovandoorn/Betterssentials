@@ -41,12 +41,13 @@ public class Baltop implements CommandExecutor {
         Date date = new Date();
         String formattedDate = dateFormat.format(date);
         sender.sendMessage(messageManager.getMessage("Baltopheader").replace("%date%", formattedDate).replace("%currentpage%", String.valueOf(pageNumber)).replace("%pages%", String.valueOf(balances.size() / 5 + 1)));
-//        sender.sendMessage("Page " + pageNumber + " out of " + (balances.size() / 5 + 1));
         for (int i = 0; i < page.size(); i++) {
             String ranking = String.valueOf((i + 1) + 5 * (pageNumber - 1));
             OfflinePlayer player = Bukkit.getOfflinePlayer(page.get(i));
-//            sender.sendMessage(player.getName() + ": " + balances.get(uuid));
             sender.sendMessage(messageManager.vaultPlaceholder(messageManager.playerPlaceholder(messageManager.getMessage("Baltopplayers").replace("%ranking%", ranking), player)));
+        }
+        if (pageNumber + 1 <= balances.size() / 5 + 1) {
+            sender.sendMessage(messageManager.getMessage("Baltopfooter").replace("%nextpage%", String.valueOf(pageNumber + 1)));
         }
         return true;
     }
