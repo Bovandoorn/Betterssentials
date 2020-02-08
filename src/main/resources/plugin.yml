@@ -113,6 +113,32 @@ commands:
   help:
     description: Help command
     usage: /<command> [plugin/page]
+  invsee:
+    description: Invsee command
+    usage: /<command> <player>
+    aliases: [inventorysee]
+    permission: betterssentials.invsee
+    permission-message: "§cYou don't have permission §6betterssentials.invsee §cto use this command."
+  kick:
+    description: Kick command
+    usage: /<command> <player> [reason]
+    permission: betterssentials.kick
+    permission-message: "§cYou don't have permission §6betterssentials.kick §cto use this command."
+  kickall:
+    description: Kickall command
+    usage: /<command> [reason]
+    permission: betterssentials.kickall
+    permission-message: "§cYou don't have permission §6betterssentials.kickall §cto use this command."
+  kill:
+    description: Kill command
+    usage: /<command> <player>
+    permission: betterssentials.kill
+    permission-message: "§cYou don't have permission §6betterssentials.kill §cto use this command."
+  killall:
+    description: Killall command
+    usage: /<command>
+    permission: betterssentials.killall
+    permission-message: "§cYou don't have permission §6betterssentials.killall §cto use this command."
   unban:
     description: Unban command
     usage: /<command> <player>

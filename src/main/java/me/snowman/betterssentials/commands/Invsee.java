@@ -1,7 +1,7 @@
 package me.snowman.betterssentials.commands;
 
 import me.snowman.betterssentials.Betterssentials;
-import me.snowman.betterssentials.managers.EnderChestManager;
+import me.snowman.betterssentials.managers.InvseeManager;
 import me.snowman.betterssentials.managers.MessageManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -11,9 +11,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-public class EnderChest implements CommandExecutor {
+public class Invsee implements CommandExecutor {
     private final MessageManager messageManager = Betterssentials.messageManager;
-    private final EnderChestManager enderChestManager = Betterssentials.enderChestManager;
+    private final InvseeManager invseeManager = Betterssentials.invseeManager;
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -23,30 +23,26 @@ public class EnderChest implements CommandExecutor {
             return true;
         }
         Player player = (Player) sender;
-        Inventory ec = null;
         if (args.length == 0) {
-            ec = Bukkit.createInventory(player, 27, "Ender Chest");
-            for (int i = 0; i < player.getEnderChest().getSize(); i++) {
-                ItemStack item = player.getEnderChest().getItem(i);
-                if (item == null) continue;
-                ec.setItem(i, item);
-            }
+            player.sendMessage(prefix + messageManager.color("&cUsage: /" + label + " <player>"));
+            return true;
         }
-        if (args.length > 0) {
+
+        if (args.length == 1) {
             Player target = Bukkit.getPlayer(args[0]);
             if (target == null) {
-                sender.sendMessage(prefix + messageManager.getMessage("PlayerNotOnline"));
+                player.sendMessage(prefix + messageManager.getMessage("PlayerNotOnline"));
                 return true;
             }
-            ec = Bukkit.createInventory(target, 27, "Ender Chest");
-            for (int i = 0; i < target.getEnderChest().getSize(); i++) {
-                ItemStack item = target.getEnderChest().getItem(i);
+            Inventory inv = Bukkit.createInventory(target, 36, "Player");
+            for (int i = 0; i < 36; i++) {
+                ItemStack item = target.getInventory().getItem(i);
                 if (item == null) continue;
-                ec.setItem(i, item);
+                inv.setItem(i, item);
             }
+            player.openInventory(inv);
+            invseeManager.addUsingInvsee(player.getUniqueId());
         }
-        player.openInventory(ec);
-        enderChestManager.addUsingEc(player.getUniqueId());
         return true;
     }
 }

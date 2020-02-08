@@ -3,7 +3,6 @@ package me.snowman.betterssentials.managers;
 import me.snowman.betterssentials.Betterssentials;
 import me.snowman.betterssentials.commands.*;
 import me.snowman.betterssentials.events.*;
-import org.bukkit.entity.Player;
 
 public class PluginManager {
 
@@ -32,6 +31,11 @@ public class PluginManager {
         getPlugin().getCommand("hat").setExecutor(new Hat());
         getPlugin().getCommand("heal").setExecutor(new Heal());
         getPlugin().getCommand("help").setExecutor(new Help());
+        getPlugin().getCommand("invsee").setExecutor(new Invsee());
+        getPlugin().getCommand("kick").setExecutor(new Kick());
+        getPlugin().getCommand("kickall").setExecutor(new Kickall());
+        getPlugin().getCommand("kill").setExecutor(new Kill());
+        getPlugin().getCommand("killall").setExecutor(new Killall());
         getPlugin().getCommand("unban").setExecutor(new Unban());
     }
 
@@ -41,14 +45,6 @@ public class PluginManager {
         getPlugin().getServer().getPluginManager().registerEvents(new FirstJoinEvent(), getPlugin());
         getPlugin().getServer().getPluginManager().registerEvents(new BanEvent(), getPlugin());
         getPlugin().getServer().getPluginManager().registerEvents(new EnderChestEvent(), getPlugin());
-    }
-
-    public boolean checkPerm(Player player, String perm) {
-        if (player.hasPermission("betterssentials." + perm) || player.hasPermission("essentials." + perm) || player.hasPermission("*") || player.isOp()) {
-            return true;
-        } else {
-            player.sendMessage("No perm");
-            return false;
-        }
+        getPlugin().getServer().getPluginManager().registerEvents(new InvseeEvent(), getPlugin());
     }
 }

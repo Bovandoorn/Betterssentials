@@ -10,11 +10,7 @@ public class EnderChestManager {
         usingEc.add(uuid);
     }
 
-    public ArrayList getUsingEc() {
-        return usingEc;
-    }
-
-    public void removedUsingEc(UUID uuid) {
+    public void removeUsingEc(UUID uuid) {
         usingEc.remove(uuid);
     }
 

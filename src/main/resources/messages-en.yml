@@ -145,4 +145,4 @@ Helpcommands: "&6/%command%&f: %description%"
 Helpfooter: "&6Type &c/help %nextpage% &6to read the next page."
 Helpheaderplugin: " &e---- &6%command% &e-- &6Page &c%currentpage%&6/&c%pages% &e----\n&6Commands from %plugin%:"
 Helpfooterplugin: "&6Type &c/help %plugin% %nextpage% &6to read the next page."
-
+Killall: "&6Removed &c%entities% &6entities."

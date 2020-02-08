@@ -14,7 +14,6 @@ public class EnderChestEvent implements Listener {
     @EventHandler
     public void onEc(InventoryClickEvent event) {
         Player player = (Player) event.getWhoClicked();
-        Player target = null;
         if (!enderChestManager.isUsingEc(player.getUniqueId())) {
             return;
         }
@@ -36,6 +35,6 @@ public class EnderChestEvent implements Listener {
         for (int i = 0; i < player.getEnderChest().getSize(); i++) {
             target.getEnderChest().setItem(i, player.getOpenInventory().getTopInventory().getItem(i));
         }
-        enderChestManager.removedUsingEc(player.getUniqueId());
+        enderChestManager.removeUsingEc(player.getUniqueId());
     }
 }
