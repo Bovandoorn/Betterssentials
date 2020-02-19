@@ -13,12 +13,15 @@ public class Betterssentials extends JavaPlugin {
     private static VaultHook vaultHook;
     public static EnderChestManager enderChestManager;
     public static InvseeManager invseeManager;
+    public static ChatManager chatManager;
+    public static MuteManager muteManager;
 
     public void onEnable() {
         loadManagers();
         pluginManager.loadEvents();
         pluginManager.loadCommands();
         economyManager.setupEconomy();
+        chatManager.setupChat();
         vaultHook.hook();
         economyManager.setupBalancesPlayers();
         fileManager.setupMessages();
@@ -39,6 +42,8 @@ public class Betterssentials extends JavaPlugin {
         afkManager = new AfkManager();
         enderChestManager = new EnderChestManager();
         invseeManager = new InvseeManager();
+        chatManager = new ChatManager();
+        muteManager = new MuteManager();
     }
 
 

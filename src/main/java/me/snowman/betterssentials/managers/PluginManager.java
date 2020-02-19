@@ -36,7 +36,11 @@ public class PluginManager {
         getPlugin().getCommand("kickall").setExecutor(new Kickall());
         getPlugin().getCommand("kill").setExecutor(new Kill());
         getPlugin().getCommand("killall").setExecutor(new Killall());
+        getPlugin().getCommand("list").setExecutor(new List());
+        getPlugin().getCommand("me").setExecutor(new Me());
+        getPlugin().getCommand("mute").setExecutor(new Mute());
         getPlugin().getCommand("unban").setExecutor(new Unban());
+        getPlugin().getCommand("unmute").setExecutor(new Unmute());
     }
 
     public void loadEvents() {
@@ -46,5 +50,6 @@ public class PluginManager {
         getPlugin().getServer().getPluginManager().registerEvents(new BanEvent(), getPlugin());
         getPlugin().getServer().getPluginManager().registerEvents(new EnderChestEvent(), getPlugin());
         getPlugin().getServer().getPluginManager().registerEvents(new InvseeEvent(), getPlugin());
+        getPlugin().getServer().getPluginManager().registerEvents(new MuteEvent(), getPlugin());
     }
 }

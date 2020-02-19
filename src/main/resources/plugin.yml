@@ -139,8 +139,26 @@ commands:
     usage: /<command>
     permission: betterssentials.killall
     permission-message: "§cYou don't have permission §6betterssentials.killall §cto use this command."
+  list:
+    description: List command
+    usage: /<command>
+  me:
+    description: Me command
+    usage: /<command> <description>
+    permission: betterssentials.me
+    permission-message: "§cYou don't have permission §6betterssentials.me §cto use this command."
+  mute:
+    description: Mute command
+    usage: /<command> <player> [time s/m/h]
+    permission: betterssentials.mute
+    permission-message: "§cYou don't have permission §6betterssentials.mute §cto use this command."
   unban:
     description: Unban command
     usage: /<command> <player>
     permission: betterssentials.unban
     permission-message: "§cYou don't have permission §6betterssentials.unban §cto use this command."
+  unmute:
+    description: Unmute command
+    usage: /<command> <player>
+    permission: betterssentials.unmute
+    permission-message: "§cYou don't have permission §6betterssentials.unmute §cto use this command."
