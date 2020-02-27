@@ -152,6 +152,11 @@ commands:
     usage: /<command> <player> [time s/m/h]
     permission: betterssentials.mute
     permission-message: "§cYou don't have permission §6betterssentials.mute §cto use this command."
+  nick:
+    description: Nick command
+    usage: /<command> [player] <nickname/off>
+    permission: betterssentials.nick
+    permission-message: "§cYou don't have permission §6betterssentials.nick §cto use this command."
   unban:
     description: Unban command
     usage: /<command> <player>

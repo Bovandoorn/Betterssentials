@@ -39,6 +39,7 @@ public class PluginManager {
         getPlugin().getCommand("list").setExecutor(new List());
         getPlugin().getCommand("me").setExecutor(new Me());
         getPlugin().getCommand("mute").setExecutor(new Mute());
+        getPlugin().getCommand("nick").setExecutor(new Nick());
         getPlugin().getCommand("unban").setExecutor(new Unban());
         getPlugin().getCommand("unmute").setExecutor(new Unmute());
     }
