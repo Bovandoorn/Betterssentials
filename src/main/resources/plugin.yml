@@ -59,6 +59,7 @@ commands:
   economy:
     description: Economy command
     usage: /<command> <give/take/set/reset> <player> <amount>
+    aliases: [eco]
     permission: betterssentials.economy
     permission-message: "§cYou don't have permission §6betterssentials.economy §cto use this command."
   enderchest:
@@ -89,6 +90,26 @@ commands:
     aliases: [gm]
     permission: betterssentials.gamemode
     permission-message: "§cYou don't have permission §6betterssentials.gamemode §cto use this command."
+  gms:
+    description: Gms command
+    usage: /<command> [player]
+    permission: betterssentials.gamemode.survival
+    permission-message: "§cYou don't have permission §6betterssentials.gamemode.survival §cto use this command."
+  gma:
+    description: Gma command
+    usage: /<command> [player]
+    permission: betterssentials.gamemode.adventure
+    permission-message: "§cYou don't have permission §6betterssentials.gamemode.adventure §cto use this command."
+  gmc:
+    description: Gmc command
+    usage: /<command> [player]
+    permission: betterssentials.gamemode.creative
+    permission-message: "§cYou don't have permission §6betterssentials.gamemode.creative §cto use this command."
+  gmsp:
+    description: Gmsp command
+    usage: /<command> [player]
+    permission: betterssentials.gamemode.spectator
+    permission-message: "§cYou don't have permission §6betterssentials.gamemode.spectator §cto use this command."
   give:
     description: Give command
     usage: /<command> <item> <player>
@@ -157,6 +178,26 @@ commands:
     usage: /<command> [player] <nickname/off>
     permission: betterssentials.nick
     permission-message: "§cYou don't have permission §6betterssentials.nick §cto use this command."
+  pay:
+    description: Pay command
+    usage: /<command> <player> <amount>
+    permission: betterssentials.pay
+    permission-message: "§cYou don't have permission §6betterssentials.pay §cto use this command."
+  realname:
+    description: Realname command
+    usage: /<command> <player>
+    permission: betterssentials.realname
+    permission-message: "§cYou don't have permission §6betterssentials.realname §cto use this command."
+  repair:
+    description: Repair command
+    usage: /<command> <hand/all>
+    permision: betterssentials.repair
+    permission-message: "§cYou don't have permission §6betterssentials.repair §cto use this command."
+  skull:
+    description: Skull command
+    usage: /<command> <name>
+    permission: betterssentials.skull
+    permission-message: "§cYou don't have permission §6betterssentials.skull §cto use this command."
   unban:
     description: Unban command
     usage: /<command> <player>

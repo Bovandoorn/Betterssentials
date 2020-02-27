@@ -26,6 +26,10 @@ public class PluginManager {
         getPlugin().getCommand("feed").setExecutor(new Feed());
         getPlugin().getCommand("fly").setExecutor(new Fly());
         getPlugin().getCommand("gamemode").setExecutor(new Gamemode());
+        getPlugin().getCommand("gms").setExecutor(new Gamemode());
+        getPlugin().getCommand("gmc").setExecutor(new Gamemode());
+        getPlugin().getCommand("gma").setExecutor(new Gamemode());
+        getPlugin().getCommand("gmsp").setExecutor(new Gamemode());
         getPlugin().getCommand("give").setExecutor(new Give());
         getPlugin().getCommand("god").setExecutor(new God());
         getPlugin().getCommand("hat").setExecutor(new Hat());
@@ -40,6 +44,10 @@ public class PluginManager {
         getPlugin().getCommand("me").setExecutor(new Me());
         getPlugin().getCommand("mute").setExecutor(new Mute());
         getPlugin().getCommand("nick").setExecutor(new Nick());
+        getPlugin().getCommand("pay").setExecutor(new Pay());
+        getPlugin().getCommand("realname").setExecutor(new Realname());
+        getPlugin().getCommand("repair").setExecutor(new Repair());
+        getPlugin().getCommand("skull").setExecutor(new Skull());
         getPlugin().getCommand("unban").setExecutor(new Unban());
         getPlugin().getCommand("unmute").setExecutor(new Unmute());
     }

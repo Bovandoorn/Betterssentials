@@ -24,7 +24,7 @@ public class Unban implements CommandExecutor {
             if (fileManager.getPlayer(uuid).getBoolean("values.banned")) {
                 fileManager.getPlayer(uuid).set("values.banned", false);
                 fileManager.savePlayer();
-                sender.sendMessage(prefix + messageManager.getMessage("Unbanned").replace("%target%", player.getName()).replace("%player%", sender.getName()));
+                Bukkit.broadcastMessage(prefix + messageManager.getMessage("Unbanned").replace("%target%", player.getName()).replace("%player%", sender.getName()));
             } else {
                 sender.sendMessage(prefix + messageManager.playerPlaceholder(messageManager.getMessage("NotBanned"), player));
                 return true;

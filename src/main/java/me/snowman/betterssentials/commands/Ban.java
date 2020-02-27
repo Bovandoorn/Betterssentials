@@ -30,6 +30,7 @@ public class Ban implements CommandExecutor {
                 return true;
             }
             UUID uuid = player.getUniqueId();
+            Bukkit.broadcastMessage(prefix + messageManager.getMessage("Banned").replace("%player%", sender.getName()).replace("%target%", player.getName()));
             player.kickPlayer(messageManager.playerPlaceholder(messageManager.getMessage("DefaultBan"), player));
             fileManager.getPlayer(uuid).set("values.banned", true);
             fileManager.getPlayer(uuid).set("values.ban reason", messageManager.getMessage("DefaultBan"));
@@ -43,6 +44,7 @@ public class Ban implements CommandExecutor {
             }
             UUID uuid = player.getUniqueId();
             final String[] reason = Arrays.stream(args).skip(1).toArray(String[]::new);
+            Bukkit.broadcastMessage(prefix + messageManager.getMessage("BannedReason").replace("%player%", sender.getName()).replace("%target%", player.getName()).replace("%reason%", String.join(" ", reason)));
             player.kickPlayer(messageManager.getMessage("YouBanned") + " " + String.join(" ", reason));
             fileManager.getPlayer(uuid).set("values.banned", true);
             fileManager.getPlayer(uuid).set("values.ban reason", messageManager.getMessage("YouBanned") + " " + String.join(" ", reason));

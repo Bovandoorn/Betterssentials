@@ -20,10 +20,8 @@ public class Betterssentials extends JavaPlugin {
         loadManagers();
         pluginManager.loadEvents();
         pluginManager.loadCommands();
-        economyManager.setupEconomy();
-        chatManager.setupChat();
-        vaultHook.hook();
-        economyManager.setupBalancesPlayers();
+        loadEconomy();
+        loadChat();
         fileManager.setupMessages();
         fileManager.setupConfig();
     }
@@ -44,6 +42,24 @@ public class Betterssentials extends JavaPlugin {
         invseeManager = new InvseeManager();
         chatManager = new ChatManager();
         muteManager = new MuteManager();
+    }
+
+    public void loadEconomy() {
+        if (getConfig().getBoolean("Enable-Economy")) {
+            economyManager.setupEconomy();
+            vaultHook.hook();
+            economyManager.setupBalancesPlayers();
+        } else {
+            getServer().getConsoleSender().sendMessage(messageManager.getPrefix() + messageManager.color("&6Economy is currently &4disabled&6!"));
+        }
+    }
+
+    public void loadChat() {
+        if (getConfig().getBoolean("Enable-Chat")) {
+            chatManager.setupChat();
+        } else {
+            getServer().getConsoleSender().sendMessage(messageManager.getPrefix() + messageManager.color("&6Chat manager is currently &4disabled&6!"));
+        }
     }
 
 

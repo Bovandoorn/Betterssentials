@@ -58,3 +58,7 @@ Minutes-Until-Afk: 5
 First-Balance: 0
 #This enables permission (betterssentials.warp.warp_name) per warp
 Per-Warp-Permission: false
+#Enable this if you don't want the economy to be handled by this plugin
+Enable-Economy: true
+#Enable this if you don't want the chat to be handled by this plugin
+Enable-Chat: true

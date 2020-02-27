@@ -15,6 +15,86 @@ public class Gamemode implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         String prefix = messageManager.getPrefix();
+        if (label.equalsIgnoreCase("gms")) {
+            if (args.length == 0) {
+                if (!(sender instanceof Player)) {
+                    sender.sendMessage(prefix + messageManager.color("&cUsage: /" + label + " <player>"));
+                    return true;
+                }
+                Player player = (Player) sender;
+                player.setGameMode(GameMode.SURVIVAL);
+                player.sendMessage(prefix + messageManager.playerPlaceholder(messageManager.getMessage("GmSet"), player));
+                return true;
+            }
+            Player player = Bukkit.getPlayer(args[0]);
+            if (player == null) {
+                sender.sendMessage(prefix + messageManager.getMessage("PlayerNotOnline"));
+                return true;
+            }
+            player.setGameMode(GameMode.SURVIVAL);
+            sender.sendMessage(prefix + messageManager.playerPlaceholder(messageManager.getMessage("GmSet"), player));
+            return true;
+        }
+        if (label.equalsIgnoreCase("gmc")) {
+            if (args.length == 0) {
+                if (!(sender instanceof Player)) {
+                    sender.sendMessage(prefix + messageManager.color("&cUsage: /" + label + " <player>"));
+                    return true;
+                }
+                Player player = (Player) sender;
+                player.setGameMode(GameMode.CREATIVE);
+                player.sendMessage(prefix + messageManager.playerPlaceholder(messageManager.getMessage("GmSet"), player));
+                return true;
+            }
+            Player player = Bukkit.getPlayer(args[0]);
+            if (player == null) {
+                sender.sendMessage(prefix + messageManager.getMessage("PlayerNotOnline"));
+                return true;
+            }
+            player.setGameMode(GameMode.CREATIVE);
+            sender.sendMessage(prefix + messageManager.playerPlaceholder(messageManager.getMessage("GmSet"), player));
+            return true;
+        }
+        if (label.equalsIgnoreCase("gma")) {
+            if (args.length == 0) {
+                if (!(sender instanceof Player)) {
+                    sender.sendMessage(prefix + messageManager.color("&cUsage: /" + label + " <player>"));
+                    return true;
+                }
+                Player player = (Player) sender;
+                player.setGameMode(GameMode.ADVENTURE);
+                player.sendMessage(prefix + messageManager.playerPlaceholder(messageManager.getMessage("GmSet"), player));
+                return true;
+            }
+            Player player = Bukkit.getPlayer(args[0]);
+            if (player == null) {
+                sender.sendMessage(prefix + messageManager.getMessage("PlayerNotOnline"));
+                return true;
+            }
+            player.setGameMode(GameMode.ADVENTURE);
+            sender.sendMessage(prefix + messageManager.playerPlaceholder(messageManager.getMessage("GmSet"), player));
+            return true;
+        }
+        if (label.equalsIgnoreCase("gmsp")) {
+            if (args.length == 0) {
+                if (!(sender instanceof Player)) {
+                    sender.sendMessage(prefix + messageManager.color("&cUsage: /" + label + " <player>"));
+                    return true;
+                }
+                Player player = (Player) sender;
+                player.setGameMode(GameMode.SPECTATOR);
+                player.sendMessage(prefix + messageManager.playerPlaceholder(messageManager.getMessage("GmSet"), player));
+                return true;
+            }
+            Player player = Bukkit.getPlayer(args[0]);
+            if (player == null) {
+                sender.sendMessage(prefix + messageManager.getMessage("PlayerNotOnline"));
+                return true;
+            }
+            player.setGameMode(GameMode.SPECTATOR);
+            sender.sendMessage(prefix + messageManager.playerPlaceholder(messageManager.getMessage("GmSet"), player));
+            return true;
+        }
         if (args.length == 0) {
             sender.sendMessage(prefix + messageManager.color("&cUsage: /" + label + " <gamemode/survival/adventure/spectator> [player]"));
             return true;
