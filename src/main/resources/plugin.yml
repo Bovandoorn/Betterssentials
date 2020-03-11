@@ -198,6 +198,11 @@ commands:
     usage: /<command> <name>
     permission: betterssentials.skull
     permission-message: "§cYou don't have permission §6betterssentials.skull §cto use this command."
+  speed:
+    description: Speed command
+    usage: /<command> <0-10> [fly/walk] [player]
+    permission: betterssentials.speed
+    permission-message: "§cYou don't have permission §6betterssentials.speed §cto use this command."
   unban:
     description: Unban command
     usage: /<command> <player>
