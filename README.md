@@ -1,8 +1,8 @@
 Source code of spigot plugin https://www.spigotmc.org/resources/betterssentials-1-8-1-14.58074/
 
-Latest progress: 5% done
+Latest progress: 10% done
 
-Total progress: 60% done
+Total progress: 70% done
 
 
 Currently done:
@@ -44,7 +44,12 @@ Currently done:
     - /realname
     - /repair
     - /skull
+    - /speed
+    - /sudo
+    - /suicide
+    - /time
     - /unban
     - /unmute
+    - /vanish
 
 Known errors: -

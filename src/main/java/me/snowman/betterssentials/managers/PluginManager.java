@@ -49,6 +49,10 @@ public class PluginManager {
         getPlugin().getCommand("repair").setExecutor(new Repair());
         getPlugin().getCommand("skull").setExecutor(new Skull());
         getPlugin().getCommand("speed").setExecutor(new Speed());
+        getPlugin().getCommand("suicide").setExecutor(new Suicide());
+        getPlugin().getCommand("sudo").setExecutor(new Sudo());
+        getPlugin().getCommand("time").setExecutor(new Time());
+        getPlugin().getCommand("vanish").setExecutor(new Vanish());
         getPlugin().getCommand("unban").setExecutor(new Unban());
         getPlugin().getCommand("unmute").setExecutor(new Unmute());
     }

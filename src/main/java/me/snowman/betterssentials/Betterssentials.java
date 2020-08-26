@@ -15,6 +15,7 @@ public class Betterssentials extends JavaPlugin {
     public static InvseeManager invseeManager;
     public static ChatManager chatManager;
     public static MuteManager muteManager;
+    public static VanishManager vanishManager;
 
     public void onEnable() {
         loadManagers();
@@ -42,6 +43,7 @@ public class Betterssentials extends JavaPlugin {
         invseeManager = new InvseeManager();
         chatManager = new ChatManager();
         muteManager = new MuteManager();
+        vanishManager = new VanishManager();
     }
 
     public void loadEconomy() {

@@ -203,6 +203,26 @@ commands:
     usage: /<command> <0-10> [fly/walk] [player]
     permission: betterssentials.speed
     permission-message: "§cYou don't have permission §6betterssentials.speed §cto use this command."
+  suicide:
+    description: Suicide command
+    usage: /<command>
+    permission: betterssentials.suicide
+    permission-message: "§cYou don't have permission §6betterssentials.suicide §cto use this command."
+  sudo:
+    description: Sudo command
+    usage: /<command> <player> <command/c:>
+    permission: betterssentials.sudo
+    permission-message: "§cYou don't have permission §6betterssentials.sudo §cto use this command."
+  time:
+    description: Time command
+    usage: /<command> <day/night/4000>
+    permission: betterssentials.time
+    permission-message: "§cYou don't have permission §6betterssentials.time §cto use this command."
+  vanish:
+    description: Vanish command
+    usage: /<command> [player]]
+    permission: betterssentials.vanish
+    permission-message: "§cYou don't have permission §6betterssentials.vanish §cto use this command."
   unban:
     description: Unban command
     usage: /<command> <player>

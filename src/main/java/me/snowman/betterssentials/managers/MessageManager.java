@@ -3,6 +3,7 @@ package me.snowman.betterssentials.managers;
 import me.snowman.betterssentials.Betterssentials;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.util.List;
@@ -54,5 +55,13 @@ public class MessageManager {
     public String vaultPlaceholder(String string) {
         string = string.replace("%money_sign%", economyImplementer.currencyNameSingular());
         return string;
+    }
+
+    public boolean hasPermission(CommandSender player, Class command) {
+        if (player.hasPermission(command.getName().toLowerCase())) {
+            return true;
+        }
+        player.sendMessage(getPrefix() + getMessage("NoPerm"));
+        return false;
     }
 }
