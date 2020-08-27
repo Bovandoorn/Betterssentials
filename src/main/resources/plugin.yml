@@ -213,6 +213,12 @@ commands:
     usage: /<command> <player> <command/c:>
     permission: betterssentials.sudo
     permission-message: "§cYou don't have permission §6betterssentials.sudo §cto use this command."
+  teleport:
+    description: Teleport command
+    usage: /<command> [player]]
+    aliases: [tp]
+    permission: betterssentials.teleport
+    permission-message: "§cYou don't have permission §6betterssentials.teleport §cto use this command."
   time:
     description: Time command
     usage: /<command> <day/night/4000>

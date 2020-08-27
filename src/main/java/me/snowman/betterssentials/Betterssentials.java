@@ -16,6 +16,7 @@ public class Betterssentials extends JavaPlugin {
     public static ChatManager chatManager;
     public static MuteManager muteManager;
     public static VanishManager vanishManager;
+    public static TeleportManager teleportManager;
 
     public void onEnable() {
         loadManagers();
@@ -44,6 +45,7 @@ public class Betterssentials extends JavaPlugin {
         chatManager = new ChatManager();
         muteManager = new MuteManager();
         vanishManager = new VanishManager();
+        teleportManager = new TeleportManager();
     }
 
     public void loadEconomy() {
